@@ -1,0 +1,17 @@
+{
+  "name": "fullstack-api-homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "nodemon": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.1"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
