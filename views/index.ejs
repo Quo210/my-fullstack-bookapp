@@ -34,10 +34,34 @@
                 <button type="submit">ENTER BOOK</button>
             </form>
         </div>
+        <div class="buks">
+            <ul class="buks">
+            <% for (let i = 0; i < books.length; i++) {
+                if(books[i].bookName != ""){ %>       
+                <li><span class="important">
+                    Book:
+                </span> "<%= books[i].bookName  %>"<br>
+                <span class="important">
+                    Author:
+                </span> <i><%= books[i].author  %></i><br>
+                <span class="important">
+                    Pages:
+                </span> <%= books[i].pages  %>p.<br>
+                <span class="important">
+                    Date:
+                </span> <%= books[i].date  %>
+                </li>
+            <%} else { %>
+
+                <li><%= "Someone forgot to write this book's name! How will we ever fix this oh no!!"  %></li>
+            
+            <% } } %>
+        </ul>
+        </div>
         <button class="populate">Show me Books</button>
     </main>
     <footer>
-        made my me!
+        made by a-me! a-Mario! huehuehue
     </footer>
 </body>
 </html>
