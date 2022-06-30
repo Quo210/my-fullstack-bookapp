@@ -58,7 +58,10 @@ MongoClient.connect(cntStr).then(client => {
             {
                 upsert: false
             })
-        .then(result => res.json('Update request sent to mongoDB'))
+        .then(result =>{ 
+            res.json('Update request sent to mongoDB');
+            console.log('result was this:', result)
+        })
         .catch(prob =>{
             console.error('Error!:',prob)
         });
