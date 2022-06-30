@@ -7,6 +7,7 @@ const cntStr = 'mongodb+srv://q210:3xfOi1x0YJpG8F31@cluster0.fgcri.mongodb.net/?
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // q210 3xfOi1x0YJpG8F31
 
@@ -34,8 +35,33 @@ MongoClient.connect(cntStr).then(client => {
         }).catch(prob => {
             if(prob) console.error(prob);
         })
+    });
+
+    app.put('/books',(req,res)=>{
+        const info = req.body;
+        console.log(info);
+        let newStatus = '';
+        if(info.read == 'no'){
+            newStatus = 'Yes'
+        } else {
+            newStatus = "No"
+        };
+        readBooks.findOneAndUpdate(
+            {
+                bookName: info.bookName
+            },
+            {
+                $set: {
+                    read: newStatus
+                }
+            },
+            {
+                upsert: false
+            })
+        .then(result => res.json('Update request sent to mongoDB'))
+        .catch(prob =>{
+            console.error('Error!:',prob)
+        });
     })
-}).then(client => {
-    
 })
-.catch(error => {if(error) console.error(error)});
+.catch(error => {if(error) console.error('This is a mongoClient error,', error)});

@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>
-            Things I've read
+            My Reading Wishlist
         </h1>
         <img src="/sample.jpeg" alt="">
     </header>
@@ -21,7 +21,7 @@
                 <input type="text" name="bookName" id="" placeholder="Ex: Dune">
                 <input type="text" name="author" id="" placeholder="Ex: Frank Herbert">
                 <input type="text" name="pages" id="" placeholder="Ex: 586">
-                <label for="name">Read?</label>
+                <label for="name">Did I read this already?</label>
                 <input type="checkbox" name="read" id="">
                 <label for="date"></label>
                 <input type="date" name="date" id="">
@@ -37,31 +37,43 @@
         <div class="buks">
             <ul class="buks">
             <% for (let i = 0; i < books.length; i++) {
-                if(books[i].bookName != ""){ %>       
-                <li><span class="important">
-                    Book:
-                </span> "<%= books[i].bookName  %>"<br>
-                <span class="important">
-                    Author:
-                </span> <i><%= books[i].author  %></i><br>
-                <span class="important">
-                    Pages:
-                </span> <%= books[i].pages  %>p.<br>
-                <span class="important">
-                    Date:
-                </span> <%= books[i].date  %>
+                if(books[i].bookName !== ""){ %>       
+                <li>
+                    <span class="property">
+                        Book
+                    </span> "<span class="bookName"><%= books[i].bookName  %></span>"<br>
+
+                    <span class="property">
+                        Author
+                    </span> <span class="author"><%= books[i].author  %></span> <br>
+
+                    <span class="property">
+                        Pages
+                    </span> <%= books[i].pages  %>p.<br>
+
+                    <span class="property">
+                        Date
+                    </span> <%= books[i].date  %><br>
+
+                    <span class="property">
+                        Read 
+                    </span> <span class="read"><% if(books[i].read == "on" || books[i].read == "Yes"){ %>
+                    <%='Yes'%><% } else { %><%='No'%><% } %></span><br>
+
+                    <button class="updater">Change Reading Status</button>
+
                 </li>
             <%} else { %>
 
-                <li><%= "Someone forgot to write this book's name! How will we ever fix this oh no!!"  %></li>
+                <!-- <li><%= "Someone forgot to write this book's name! How will we ever fix this oh no!!"  %></li> -->
             
             <% } } %>
         </ul>
         </div>
-        <button class="populate">Show me Books</button>
     </main>
     <footer>
         made by a-me! a-Mario! huehuehue
     </footer>
+    <script src="logic.js"></script>
 </body>
 </html>

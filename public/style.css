@@ -12,11 +12,15 @@ img{
     max-height: 20vh;
 }
 
-span.important{
+span.property{
     color: darkred;
     font-size: 110%;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+span.author{
+    font-style: italic;
 }
 
 ul.buks{
@@ -45,4 +49,8 @@ ul.buks{
 
 .buks li:hover{
     background-color: #999;
+}
+
+header, h1, form{
+    text-align: center;
 }
