@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient;
 const cntStr = 'mongodb+srv://q210:3xfOi1x0YJpG8F31@cluster0.fgcri.mongodb.net/?retryWrites=true&w=majority';
