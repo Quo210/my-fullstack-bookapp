@@ -24,13 +24,31 @@ MongoClient.connect(cntStr).then(client => {
     
     app.get('/',(req,res)=>{
         readBooks.find().toArray().then(result =>{
-            res.render('index.ejs',{books: result})
-            console.log('Webpage rendered!')
+            const resArray = Array.from( result );
+            resArray.forEach(object => {
+                for (property in object){
+                    switch(property){
+                        case 'bookName':
+                        case 'author':
+                        case 'genre':
+                            const target = object[property].split(" ");
+                            const replacement = target.map(word => {
+                                return word.charAt(0).toUpperCase() + word.substring(1);
+                            })
+                            object[property] = replacement.join(" ");
+                    }}
+                })
+            res.render('index.ejs',{books: resArray})
         }).catch(err => console.error(err))
     })
     
     app.post('/books',(req,res)=>{
-        readBooks.insertOne(req.body).then(result =>{
+        const object = req.body;
+        for (property in object){
+            object[property] = object[property].toLowerCase();
+        }
+
+        readBooks.insertOne(object).then(result =>{
             res.redirect('/')
         }).catch(prob => {
             if(prob) console.error(prob);
@@ -39,7 +57,6 @@ MongoClient.connect(cntStr).then(client => {
 
     app.put('/books',(req,res)=>{
         const info = req.body;
-        console.log(info);
         let newStatus = '';
         if(info.read == 'no'){
             newStatus = 'Yes'
@@ -65,6 +82,20 @@ MongoClient.connect(cntStr).then(client => {
         .catch(prob =>{
             console.error('Error!:',prob)
         });
+    });
+
+    app.delete('/books',(req,res) => {
+        const info = req.body;
+        readBooks.findOneAndDelete(
+            {
+                bookName: info.bookName
+            }
+        ).then(result => {
+            if(result.deletedCount === 0) res.json('No more books by that name to delete.');
+            else res.json(`Successfully Deleted Book: "${info.bookName.toUpperCase()}"!`);
+        }).catch(err => {
+            if(err) console.error('Deletion Error:',err);
+        })
     })
 })
 .catch(error => {if(error) console.error('This is a mongoClient error,', error)});

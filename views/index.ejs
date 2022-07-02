@@ -15,7 +15,7 @@
         <img src="/sample.jpeg" alt="">
     </header>
     <main>
-        <h1>List of books</h1>
+        <h1 class="subtitle">List of books <a id="anchor" href="__anchor"></a></h1>
         <div class="books">
             <form action="/books" method="POST">
                 <input type="text" name="bookName" id="" placeholder="Ex: Dune">
@@ -61,6 +61,7 @@
                     <%='Yes'%><% } else { %><%='No'%><% } %></span><br>
 
                     <button class="updater">Change Reading Status</button>
+                    <button class="deleter">[X]</button>
 
                 </li>
             <%} else { %>

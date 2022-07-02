@@ -54,3 +54,12 @@ ul.buks{
 header, h1, form{
     text-align: center;
 }
+
+.deleter{
+    color: red;
+    background-color: darkred;
+}
+
+.deleter:hover{
+    background-color: rgb(63, 3, 3);
+}
