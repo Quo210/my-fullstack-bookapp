@@ -20,24 +20,6 @@
         <h1 class="subtitle titleBand">&#128071;
              The Books &#128071;
              <a id="anchor" href="__anchor"></a></h1>
-        <div class="books">
-            <form action="/books" method="POST">
-                <input type="text" name="bookName" id="" placeholder="Ex: Dune">
-                <input type="text" name="author" id="" placeholder="Ex: Frank Herbert">
-                <input type="text" name="pages" id="" placeholder="Ex: 586">
-                <label for="name">Did I read this already?</label>
-                <input type="checkbox" name="read" id="">
-                <label for="date"></label>
-                <input type="date" name="date" id="">
-                <select name="genre" id="">
-                    <option value="horror">Horror</option>
-                    <option value="action">Action and Adventure</option>
-                    <option value="nonfic">Non-Fiction and Educational</option>
-                    <option value="romance">Romance</option>
-                </select>
-                <button type="submit">ENTER BOOK</button>
-            </form>
-        </div>
         <div class="buks">
             <ul class="buks">
             <% for (let i = 0; i < books.length; i++) {
@@ -74,6 +56,25 @@
             
             <% } } %>
         </ul>
+        </div>
+        <div class="books">
+            <form action="/books" method="POST">
+                <h2>Enter the information of the book you wish to add to the list</h2>
+                <input type="text" name="bookName" id="" placeholder="Ex: Dune">
+                <input type="text" name="author" id="" placeholder="Ex: Frank Herbert">
+                <input type="text" name="pages" id="" placeholder="Ex: 586">
+                <label for="name">Did I read this already?</label>
+                <input type="checkbox" name="read" id="">
+                <label for="date"></label>
+                <input type="date" name="date" id="">
+                <select name="genre" id="">
+                    <option value="horror">Horror</option>
+                    <option value="action">Action and Adventure</option>
+                    <option value="nonfic">Non-Fiction and Educational</option>
+                    <option value="romance">Romance</option>
+                </select>
+                <button type="submit">ENTER BOOK</button>
+            </form>
         </div>
     </main>
     <footer>

@@ -62,49 +62,6 @@ body{
     font-size: 1.6rem;
 }
 
-img{
-    max-height: 20vh;
-}
-
-span.property{
-    color: darkred;
-    font-size: 110%;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
-}
-
-span.author{
-    font-style: italic;
-}
-
-ul.buks{
-    padding: 0.1rem;
-    border: 3px white solid;
-    background-color: #444;
-    display: flex;
-    flex-direction: row;
-    min-height: 900px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 70vw;
-    margin: 2rem auto;
-}
-
-.buks li{
-    display: block;
-    width: 30%;
-    padding: 1rem;
-    background-color: white;
-    color: black;
-    border: 3px black inset;
-    margin: 0.5rem;
-    border-radius: 10px;
-}
-
-.buks li:hover{
-    background-color: #999;
-}
-
 header, h1, form{
     text-align: center;
 }
@@ -137,6 +94,8 @@ html{
     background-color: var(--space-cadet);
 }
 
+/*Header area */
+
 .titleBand{
     background-color: var(--sizzling-red);
     color: var(--canary);
@@ -158,11 +117,62 @@ header{
     height: 20vh;
     background-position: center;
     background-size: contain;
-    border: 0px solid;
+    border-style: solid;
     border-color: silver;
     border-width: 0.5rem 0;
 }
 
 .credits{
     display: none;
+}
+
+/* Books Area */
+
+span.property{
+    color: var(--persian-green);
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+span.author{
+    font-style: italic;
+}
+
+ul.buks{
+    border: 0.5rem var(--space-cadet) groove;
+    background-color: var(--persian-green);
+    display: flex;
+    flex-direction: row;
+    min-height: 600px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 95vw;
+    margin: 2rem auto;
+}
+
+.buks li{
+    display: block;
+    padding: 1rem;
+    background-color: var(--space-cadet);
+    color: white;
+    border: 5px black inset;
+}
+
+.buks li:hover{
+    background-color:  rgb(68, 72, 105);
+    transform: scale(1.01);
+}
+
+
+/* Form area */
+
+div.books{
+    width: 80vw;
+    background-color: var(--light-salmon);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-style: solid;
+    border-color: var(--canary);
+    border-width: 0.5rem;
 }
