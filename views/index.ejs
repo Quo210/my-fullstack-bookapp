@@ -25,30 +25,30 @@
             <% for (let i = 0; i < books.length; i++) {
                 if(books[i].bookName !== ""){ %>       
                 <li>
-                    <span class="property">
-                        Book
-                    </span> "<span class="bookName"><%= books[i].bookName  %></span>"<br>
+                        <span class="property">
+                            Book
+                        </span> "<span class="bookName"><%= books[i].bookName  %></span>" <hr>
 
-                    <span class="property">
-                        Author
-                    </span> <span class="author"><%= books[i].author  %></span> <br>
+                        <span class="property">
+                            Author
+                        </span> <span class="author"><%= books[i].author  %></span> <hr>
 
-                    <span class="property">
-                        Pages
-                    </span> <%= books[i].pages  %>p.<br>
+                        <span class="property">
+                            Pages
+                        </span> <%= books[i].pages  %>p. <hr>
 
-                    <span class="property">
-                        Date
-                    </span> <%= books[i].date  %><br>
+                        <span class="property">
+                            Date
+                        </span> <%= books[i].date  %> <hr>
 
-                    <span class="property">
-                        Read 
-                    </span><span class="read"><% if(books[i].read == "on" || books[i].read == "Yes"){ %>
-                    <%='Yes'%><% } else { %><%='No'%><% } %></span><br>
-
-                    <button class="updater">Change Reading Status</button>
-                    <button class="deleter">[X]</button>
-
+                        <span class="property">
+                            Read 
+                        </span><span class="read"><% if(books[i].read == "on" || books[i].read == "Yes"){ %>
+                        <%='Yes'%><% } else { %><%='No'%><% } %></span> <hr>
+            
+                    <button class="updater">Change Status</button>
+                    <button class="deleter">Remove</button>
+        
                 </li>
             <%} else { %>
 
@@ -60,8 +60,8 @@
         <div class="books">
             <form action="/books" method="POST">
                 <h2>Enter the information of the book you wish to add to the list</h2>
-                <input type="text" name="bookName" id="" placeholder="Ex: Dune">
-                <input type="text" name="author" id="" placeholder="Ex: Frank Herbert">
+                <input type="text" name="bookName" id="" placeholder="Ex: Dune" maxlength="20">
+                <input type="text" name="author" id="" maxlength="20" placeholder="Ex: Frank Herbert">
                 <input type="text" name="pages" id="" placeholder="Ex: 586">
                 <label for="name">Did I read this already?</label>
                 <input type="checkbox" name="read" id="">

@@ -24,7 +24,7 @@ buttons.forEach(button => {
         })
         .then(res =>{ if (res.ok) return res.json() })
         .then(response => window.location.reload() )
-        .catch(err => {if(err) console.error(err)})
+        .catch(err => {if(err) console.error('Logic.js Error: ',err)})
     })
 });
 
