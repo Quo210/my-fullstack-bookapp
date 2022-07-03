@@ -256,17 +256,6 @@ footer a{
     text-decoration: none;
 }
 
-@media screen and (max-width: 700px) {
-    ul.buks{
-        grid-template-columns: 1fr;
-    }
-
-    form{
-        grid-template-columns: 1fr;
-    }
-    
-}
-
 @media screen and (max-width: 1000px) {
     ul.buks{
         grid-template-columns: 50% 50%;
@@ -277,3 +266,15 @@ footer a{
     }
     
 }
+
+@media screen and (max-width: 600px) {
+    ul.buks{
+        grid-template-columns: auto;
+    }
+
+    form{
+        grid-template-columns: auto;
+    }
+    
+}
+
