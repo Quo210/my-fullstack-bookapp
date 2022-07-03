@@ -75,9 +75,6 @@ header, h1, form{
     background-color: rgb(63, 3, 3);
 }
 
-footer{
-    text-align: center;
-}
 
 /* Visuals branch changes */
 
@@ -205,4 +202,17 @@ div.books{
     border-style: solid;
     border-color: var(--canary);
     border-width: 0.5rem;
+}
+
+
+/* footer area */
+
+footer{
+    text-align: center;
+}
+
+footer a{
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
 }
