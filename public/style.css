@@ -142,13 +142,13 @@ span.author{
 ul.buks{
     border: 0.5rem var(--space-cadet) groove;
     background-color: var(--persian-green);
-    display: flex;
-    flex-direction: row;
     min-height: 600px;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    padding: 1rem;
     width: 95vw;
     margin: 2rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
 }
 
 .buks li{
