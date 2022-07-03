@@ -46,10 +46,10 @@ buttonsDel.forEach(button => {
         .then(res =>{ if (res.ok) return res.json() })
         .then(response =>{
             window.scrollTo({ top: 0, behavior: 'smooth' })
-            document.querySelector('h1.subtitle').textContent = response + '... Realoding now';
+            document.querySelector('h1.subtitle').textContent = response + ' ... Relaoding page ...';
             setTimeout(()=>{
                 window.location.reload()
-            },5000) 
+            },4000) 
         })
         .catch(err => {if(err) console.error(err)})
     })

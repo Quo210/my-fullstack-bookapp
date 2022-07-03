@@ -77,7 +77,6 @@ MongoClient.connect(cntStr).then(client => {
             })
         .then(result =>{ 
             res.json('Update request sent to mongoDB');
-            console.log('result was this:', result)
         })
         .catch(prob =>{
             console.error('Error!:',prob)

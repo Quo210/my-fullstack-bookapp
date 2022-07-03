@@ -215,9 +215,34 @@ div.books{
 
 input,select{
     background-color: var(--canary);
-    color: --light-salmon
+    width: 50%;
 }
 
+form{
+    display: grid;
+    grid-template-columns: repeat(3,33%);
+    gap: 1rem;
+}
+
+.wrap{
+    text-align: start;
+}
+
+#checkbux{
+    width: auto;
+}
+
+.formEnter{
+    width: 200px;
+    background-color: var(--sizzling-red);
+    font-weight: 800;
+    font-size: 1.6rem;
+}
+
+.formEnter:hover{
+    background-color: rgb(245, 70, 50);
+    color: black;
+}
 
 /* footer area */
 

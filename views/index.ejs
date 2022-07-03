@@ -61,37 +61,43 @@
             <h2>Enter a new book</h2>
             <form action="/books" method="POST">
                 <div class="wrap">
-                    <label for="bookName">Book Name</label>
                     <input type="text" name="bookName" id="" placeholder="Ex: Dune" maxlength="20">
+                    <label for="bookName">Book Name</label>
+
                 </div>
 
                 <div class="wrap">
-                    <label for="author">Author</label>
                     <input type="text" name="author" id="" maxlength="20" placeholder="Ex: Frank Herbert">
+                    <label for="author">Author</label>
                 </div>
+
                 <div class="wrap">
-                    <label for="pages">Pages</label>
                     <input type="text" name="pages" id="" placeholder="Ex: 586">
+                    <label for="pages">Pages</label>
+
                 </div>
                 <div class="wrap">           
-                    <label for="name">Did I read this already?</label>
-                    <input type="checkbox" name="read" id="">
+                    <input type="checkbox" name="read" id="checkbux">
+                    <label for="name">Read?</label>
+
                 </div>
                 <div class="wrap">
-                    <label for="date">Date of Reading</label>
                     <input type="date" name="date" id="">
+                    <label for="date">Date of Reading</label>
+
                 </div>
                 <div class="wrap">
-                    <label for="genre">Genre</label>
                     <select name="genre" id="">
                     <option value="horror">Horror</option>
                     <option value="action">Action and Adventure</option>
                     <option value="nonfic">Non-Fiction and Educational</option>
                     <option value="romance">Romance</option>
                     </select>
+                    <label for="genre">Genre</label>
+
                 </div>
 
-                <button type="submit">ENTER BOOK</button>
+                <button class="formEnter" type="submit">SUBMIT BOOK</button>
             </form>
         </div>
     </main>
