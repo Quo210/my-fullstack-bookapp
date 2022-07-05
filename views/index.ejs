@@ -35,7 +35,7 @@
 
                         <span class="property">
                             Pages
-                        </span> <%= books[i].pages  %>p. <hr>
+                        </span> <%= books[i].pages  %> <hr>
 
                         <span class="property">
                             Date
@@ -45,6 +45,9 @@
                             Read 
                         </span><span class="read"><% if(books[i].read == "on" || books[i].read == "Yes"){ %>
                         <%='Yes'%><% } else { %><%='No'%><% } %></span> <hr>
+
+                        <span class="property">Genre</span>
+                        <span><%= books[i].genre %></span> <hr>
             
                     <button class="updater">Change Status</button>
                     <button class="deleter">Remove</button>
@@ -89,9 +92,12 @@
                 <div class="wrap">
                     <select name="genre" id="">
                     <option value="horror">Horror</option>
-                    <option value="action">Action and Adventure</option>
-                    <option value="nonfic">Non-Fiction and Educational</option>
+                    <option value="action/ adventure">Action and Adventure</option>
+                    <option value="nonfiction/educational">Non-Fiction and Educational</option>
                     <option value="romance">Romance</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="science fiction">Sci-fi</option>
+                    <option value="hard Science fiction">Hard Sci-fi</option>
                     </select>
                     <label for="genre">Genre</label>
 
